@@ -1,7 +1,7 @@
 import "./About.css";
 // import "../index.css";
 import { useState, useEffect } from "react";
-import JoshBodyPhoto from "../assets/images/AboutCascade/Jheadshot1.png"
+import JoshBodyPhoto from "../assets/images/AboutCascade/JHeadshot1.png"
 import JoshHeadshot from "../assets/images/AboutCascade/20251009_HeadshotE1.png"
 import GreenShirt from "../assets/images/AboutCascade/GreenShirt.png"
 import MeInTheCar from "../assets/images/AboutCascade/MeInTheCar.png"
