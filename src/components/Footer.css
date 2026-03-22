@@ -1,0 +1,225 @@
+.footer-container {
+  background-color: var(--secondary-color); 
+  color: var(--primary-color);
+  padding: 70px 5% 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+
+.footer-container::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -10%;
+  width: 120%;
+  height: 150px;
+  background: radial-gradient(
+    circle at 50% 100%, 
+    rgba(0, 212, 255, 0.77) 0%,   /* Light Cyan/Blue */
+    transparent 130%
+  );
+  filter: blur(60px);
+  z-index: 0; 
+  pointer-events: none; 
+  animation: magicalWave 6s infinite alternate ease-in-out;
+  /* rotate: 20deg; */
+}
+
+/* Ensure footer content stays above the glow */
+.footer-grid, .footer-copyright {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-text h2 {
+	text-transform: uppercase;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+.footer-text p {
+	font-size: 16px;
+}
+.footer-container a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.footer-text a:hover {
+  text-decoration: underline;
+  color: #FFF;
+}
+
+.footer-navigation {
+  width: fit-content;
+}
+.footer-navigation a {
+  margin-bottom: 10px;
+}
+
+.footer-contact p:hover {
+  color: #FFF;
+}
+
+/* space the text below headers evenly */
+.footer-contact a, .footer-contact p, .footer-contact .email-container {
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+/*  */
+
+.email-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.email-text {
+  font-size: 14px;
+  color: var(--primary-color);
+}
+.email-text:hover {
+  color: #FFF;
+}
+
+.email-copy {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.email-container:hover .email-copy {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.email-copy.copied {
+  background-color: green;
+}
+
+/*  */
+
+.footer-social-btns {
+  width: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+}
+.footer-social-btns a:nth-child(1) {
+	margin-left: 0;
+}
+.footer-social-btns a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  /* border-radius: 50%; */
+  color: var(--primary-color);
+  margin: 0 10px;
+  font-size: 28px;
+  text-decoration: none;
+  transition: .2s ease;
+}
+.footer-social-btns a:hover {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  /* box-shadow: 0 0 20px var(--primary-color); */
+}
+.footer-social-btns a i {
+  margin-top: 2px;
+}
+
+/*  */
+
+.footer-copyright {
+  border-top: 1px solid var(--primary-color);
+  text-align: center;
+  margin-top: 30px;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.footer-copyright .heart {
+  font-size: 12.5px;
+}
+
+
+
+
+
+.glow-elements {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  pointer-events: none; /* Keeps links clickable */
+  z-index: 0;
+}
+
+.blob {
+  position: absolute;
+  bottom: -20px;
+  width: 250px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(100, 180, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(50px);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: flowRight 15s linear infinite;
+}
+
+/* Offsetting blobs so they don't all move at once */
+.blob:nth-child(1) { left: -10%; animation-duration: 18s; }
+.blob:nth-child(2) { left: -30%; animation-duration: 22s; animation-delay: 2s; height: 100px; }
+.blob:nth-child(3) { left: -50%; animation-duration: 15s; animation-delay: 5s; width: 300px; }
+
+/* The Seamless Flow Animation */
+@keyframes flowRight {
+  0% {
+    transform: translateX(-20vw);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}
+
+
+/* The "Wave" Animation */
+@keyframes magicalWave {
+  0% {
+    transform: scaleX(1) translateY(-5px) rotate(0deg);
+  }
+  33% {
+    transform: scaleX(1.4) translateY(0px) rotate(-2deg);
+  }
+  66% {
+    transform: scaleX(1.6) translateY(-3px) rotate(2deg);
+  }
+  100% {
+    transform: scaleX(1) translateY(-5px) rotate(0deg);
+  }
+}

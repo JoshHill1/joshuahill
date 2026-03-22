@@ -1,0 +1,109 @@
+.profile-container {
+	border-top: 1px solid var(--secondary-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 7rem;
+}
+
+.profile-container .column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about p,
+.experience p{
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.profile-container .column h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+	text-transform: uppercase;
+}
+
+.link-highlight {
+  display: inline-block;
+  margin-top: 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+  
+.experience-item {
+  margin-bottom: 2rem;
+}
+
+.experience-item .date {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.experience-item h4 {
+  margin-bottom: 0.5rem;
+}
+
+.experience-item span {
+  font-weight: normal;
+  color: #555;
+}
+
+.recent-posts {
+  list-style: none;
+  padding: 0;
+}
+
+.recent-posts li {
+  border-top: 1px solid var(--secondary-color);
+  border-bottom: 1px solid var(--secondary-color);
+  margin: 0.5rem 0;
+}
+
+.recent-posts li i {
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  color: var(--secondary-color);
+  font-size: 1.8rem;
+}
+
+.recent-posts li a {
+  padding: 0.75rem 0;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  transition: 0.2s ease;
+  position: relative;
+}
+
+/* text overline & underline */
+.recent-posts li a:before, .recent-posts li a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px; /* height of the line */
+  right: 0;
+  background-color: var(--secondary-color);
+  transform: scaleX(0);
+  transition: transform .4s ease-in-out;
+}
+.recent-posts li a:before {
+  top: 0; /* <- positions it at the top */
+  transform-origin: top right;
+}
+.recent-posts li a:after {
+  bottom: 0; /* <- positions it at the bottom */
+  transform-origin: bottom right;
+}
+
+.recent-posts li a:hover:before, .recent-posts li a:hover:after {
+  transition: transform 0.25s ease;
+  transform: scaleX(1);
+}
+.recent-posts li a:hover:before {
+  transform-origin: top right;
+}
+.recent-posts li a:hover:after {
+  transform-origin: bottom right;
+}

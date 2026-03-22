@@ -1,0 +1,65 @@
+form {
+  border-top: 1px solid var(--secondary-color);
+  margin: 0 auto; 
+  padding: 1rem 6rem;
+}
+
+#message-name-email {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Inputs and Text Area styling */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #000; 
+  border-radius: 1px;
+  background-color: #fff; 
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box; /* Ensures padding doesn't break layout */
+  transition: border-color 0.3s ease;
+}
+
+/* Set the height for the message box */
+textarea {
+  min-height: 150px;
+  resize: vertical; /* Allows user to resize vertically only */
+}
+
+/* Focus state: When the user clicks into a box */
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color); /* Secondary Color highlight */
+}
+
+/* Button Styling */
+.send-msg-btn {
+  padding: 15px;
+  background-color: var(--secondary-color); /* Secondary Color */
+  color: #E5E5E5; 
+  border: none;
+  border-radius: 1px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1px solid var(--secondary-color);
+  width: 100%;
+  background-size: 250% auto;
+  border: none;
+  transition: 0.3s ease;
+}

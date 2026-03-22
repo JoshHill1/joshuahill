@@ -1,0 +1,118 @@
+.aboutp p {
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
+.aboutp-intro {
+  margin: 0 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  height: calc(100vh - var(--navbar-height));
+}
+
+.aboutp-intro img {
+  width: 500px;
+  height: auto;
+}
+
+.aboutp-intro-text {
+  background: linear-gradient(
+    60deg,
+    #5656ff,
+    #4545ff 42% 58%,
+    #5656ff
+  );
+  background-clip: text;
+}
+.highlighted {
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+
+/* --- CARD STACK STYLES --- */
+.stack-container {
+  position: relative;
+  width: 500px;
+  height: 500px; /* Ensure this container is large enough for the absolute images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Perspective adds a slight 3D feel to the stack layers */
+  /* perspective: 1000px;  */
+}
+
+.stack-card {
+  width: 400px; /* Fixed width for the images */
+  height: auto;
+  border-radius: 1rem;
+  position: absolute;
+  transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth easing */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+/* STATE 1: Front (Active) */
+.card-front {
+  z-index: 10;
+  transform: translate(0, 0) scale(1);
+}
+
+/* STATE 2: First one behind (Top Right) */
+.card-back-1 {
+  z-index: 9;
+  /* Move 20px right, 20px up, shrink slightly */
+  transform: translate(20px, -20px) scale(0.95);
+}
+
+/* STATE 3: Second one behind (Further Top Right) */
+.card-back-2 {
+  z-index: 8;
+  /* Move 40px right, 40px up, shrink more */
+  transform: translate(40px, -40px) scale(0.9);
+}
+
+/* STATE 4: Hidden/Waiting (Queue) */
+/* This sits behind card-back-2 waiting to enter */
+.card-hidden {
+  z-index: 1;
+  opacity: 0;
+  transform: translate(40px, -40px) scale(0.9);
+  /* We make transition instant so it doesn't 'fly' across screen when resetting */
+  transition: none; 
+}
+
+/* STATE 5: Exit (Drop to Bottom Left) */
+.card-exit {
+  z-index: 0;
+  opacity: 0;
+  /* Move down and left, shrink significantly */
+  transform: translate(-00px, 100px) scale(0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .aboutp-intro {
+    grid-template-columns: 1fr;
+    margin: 0;
+    height: fit-content;
+  }
+
+  .aboutp-intro-text {
+    padding: 25px 15px 10px;
+    width: 414px;
+    text-align: center;
+  }
+
+  .aboutp-intro img {
+    width: 100vw;
+  }
+
+  .quote-text {
+    padding: 50px 15px;
+  }
+  .quote-text p {
+    font-weight: 600;
+    font-size: 26px;
+  }
+}
