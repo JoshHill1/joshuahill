@@ -1,4 +1,4 @@
-import "./about.css";
+import "./About.css";
 // import "../index.css";
 import { useState, useEffect } from "react";
 import JoshBodyPhoto from "../assets/images/AboutCascade/Jheadshot1.png"
